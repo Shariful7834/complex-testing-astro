@@ -13,3 +13,11 @@ This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
 
 [![CC BY 4.0][cc-by-image]][cc-by]
+
+<!--
+I updated files
+1. astro.config.mjs
+2. tutorialPreview.astro
+3. navLink.astro
+4. site-config.ts
+5.  -->
