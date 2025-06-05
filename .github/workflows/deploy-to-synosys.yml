@@ -18,7 +18,7 @@ jobs:
                   node-version: 20
 
             - name: Install dependencies
-              run: npm ci
+              run: npm install
 
             - name: Build Astro site
               run: npm run build
@@ -39,8 +39,8 @@ jobs:
             - name: Commit and push to SynoSys
               run: |
                   cd synosys-site
-                  git config user.name "GitHub Action"
-                  git config user.email "action@github.com"
+                  git config user.name "Md Shariful Islam"
+                  git config user.email "engr.shariful.cse@gmail.com"
                   git add static/teaching/complex-systems
                   git commit -m "Auto deploy Complex Systems course from Astro site" || echo "No changes"
                   git push
