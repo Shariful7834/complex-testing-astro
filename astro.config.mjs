@@ -7,13 +7,12 @@ import remarkMath from 'remark-math';
 import siteConfig from './src/data/site-config';
 import generateDarkImages from './src/integrations/generate-dark-images';
 
-
 import react from '@astrojs/react';
 
-
-// https://astro.build/config
 export default defineConfig({
     site: siteConfig.website,
+    base: '/teaching/complex-systems/', // ✅ ADD THIS LINE
+
     markdown: {
         remarkPlugins: [remarkMath],
         rehypePlugins: [
