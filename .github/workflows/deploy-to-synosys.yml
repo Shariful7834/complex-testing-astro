@@ -1,0 +1,46 @@
+name: Deploy Astro Dist to SynoSys
+
+on:
+    push:
+        branches: [main] # Adjust if your branch is not main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Astro repo
+              uses: actions/checkout@v3
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 20
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build Astro site
+              run: npm run build
+
+            - name: Checkout SynoSys Hugo repo
+              uses: actions/checkout@v3
+              with:
+                  repository: synosys/synosys_website
+                  path: synosys-site
+                  token: ${{ secrets.SYNOSYS_PAT }}
+
+            - name: Copy built dist to SynoSys static/teaching/complex-systems
+              run: |
+                  rm -rf synosys-site/static/teaching/complex-systems
+                  mkdir -p synosys-site/static/teaching/complex-systems
+                  cp -r dist/* synosys-site/static/teaching/complex-systems/
+
+            - name: Commit and push to SynoSys
+              run: |
+                  cd synosys-site
+                  git config user.name "GitHub Action"
+                  git config user.email "action@github.com"
+                  git add static/teaching/complex-systems
+                  git commit -m "Auto deploy Complex Systems course from Astro site" || echo "No changes"
+                  git push
