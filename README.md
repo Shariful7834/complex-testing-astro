@@ -20,4 +20,5 @@ I updated files
 2. tutorialPreview.astro
 3. navLink.astro
 4. site-config.ts
-5.  -->
+5. working with different files
+6.  -->
