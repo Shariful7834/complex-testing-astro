@@ -14,7 +14,7 @@ export type Author = {
     name: string;
     image?: Image;
     url?: string;
-}
+};
 
 export type Link = {
     text: string;
@@ -51,6 +51,9 @@ export type SiteConfig = {
     projectsPerPage?: number;
 };
 
+// ✅ Move this OUTSIDE of the config object
+const base = '/teaching/complex-systems';
+
 const siteConfig: SiteConfig = {
     logo: {
         src: logoLight,
@@ -77,55 +80,28 @@ const siteConfig: SiteConfig = {
         alt: 'Complex Systems in Biology'
     },
     headerNavLinks: [
-        {
-            text: 'Home',
-            href: '/'
-        },
-        // {
-        //     text: 'Projects',
-        //     href: '/projects'
-        // },
-        // {
-        //     text: 'Blog',
-        //     href: '/blog'
-        // },
-        {
-            text: 'Tutorials',
-            href: '/tutorials'
-        },
-        {
-            text: 'Contact',
-            href: '/contact'
-        },
-        {
-            text: 'Explorables',
-            href: 'https://complexity-explorables.org'
-        }
+        { text: 'Home', href: `${base}/` },
+        { text: 'Tutorials', href: `${base}/tutorials/` },
+        { text: 'Contact', href: `${base}/contact/` },
+        { text: 'Explorables', href: 'https://complexity-explorables.org' }
     ],
     footerNavLinks: [
-
-        {
-            text: 'Contact',
-            href: '/contact'
-        }, {
-            text: 'Terms',
-            href: '/terms'
-        }
+        { text: 'Contact', href: `${base}/contact/` },
+        { text: 'Terms', href: `${base}/terms/` }
     ],
     socialLinks: [
-
         {
             text: 'Center Synergy of Systems',
             href: 'https://synosys.github.io'
-        }, {
+        },
+        {
             text: 'TU Dresden',
             href: 'https://tu-dresden.de'
         }
     ],
-
     hero: {
         title: 'Welcome!',
-        text: "brüllafen alarm ist auch was schönes, vor allem morgens",
+        text: 'brüllafen alarm ist auch was schönes, vor allem morgens',
         image: {
             src: heroImg,
             alt: 'A person sitting at a desk in front of a computer'
