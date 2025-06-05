@@ -11,7 +11,7 @@ import react from '@astrojs/react';
 
 export default defineConfig({
     site: siteConfig.website,
-    base: '/teaching/complex-systems/', // ✅ ADD THIS LINE
+    base: '/teaching/complex-systems/', // Adjust the base path as needed
 
     markdown: {
         remarkPlugins: [remarkMath],
