@@ -12,6 +12,7 @@ import react from '@astrojs/react';
 export default defineConfig({
     site: siteConfig.website,
     base: '/teaching/complex-systems/', // ✅ ADD THIS LINE
+    trailingSlash: 'always', // ✅ ADD THIS LINE
 
     markdown: {
         remarkPlugins: [remarkMath],
