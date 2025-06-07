@@ -12,6 +12,8 @@ export default defineConfig({
     site: 'https://synosys.github.io',
     base: '/teaching/complex-systems/', // This matches where Hugo serves static files
     // trailingSlash: 'always',
+    integrations: [],
+
     markdown: {
         remarkPlugins: [remarkMath],
         rehypePlugins: [
