@@ -1,7 +1,7 @@
 // copy-dist.js
-const fs = require('fs');
-const path = require('path');
-const fse = require('fs-extra');
+import fs from 'fs';
+import path from 'path';
+import fse from 'fs-extra';
 
 // Path to Hugo static directory
 const destinationPath = path.resolve('../synosys-hugo/static/teaching/complex-systems');

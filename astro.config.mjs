@@ -10,8 +10,8 @@ import generateDarkImages from './src/integrations/generate-dark-images';
 import react from '@astrojs/react';
 
 export default defineConfig({
-    site: siteConfig.website,
-    base: '/teaching/complex-systems/', // Adjust the base path as needed
+    site: 'https://synosys.github.io',
+    base: '/teaching/complex-systems/', // This matches where Hugo serves static files
     // trailingSlash: 'always',
     markdown: {
         remarkPlugins: [remarkMath],

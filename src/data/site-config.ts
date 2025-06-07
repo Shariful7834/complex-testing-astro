@@ -63,7 +63,7 @@ const siteConfig: SiteConfig = {
         src: logoDark,
         alt: 'SynoSys (Dark)'
     },
-    website: 'https://synosys.github.io/teaching/complex-systems-biology/',
+    website: 'https://synosys.github.io',
     title: 'Introduction to Complex Systems in Biology (and Beyond)',
     author: {
         name: 'Dirk Brockmann',
@@ -73,10 +73,9 @@ const siteConfig: SiteConfig = {
         },
         url: 'https://synosys.github.io'
     },
-    subtitle: 'A course by Dirk Brockmann',
-    description: '',
+    subtitle: 'A course by Dirk Brockmann',    description: '',
     image: {
-        src: complexityImg,
+        src: '/complexity.jpg',
         alt: 'Complex Systems in Biology'
     },
     headerNavLinks: [
