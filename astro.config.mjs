@@ -10,8 +10,8 @@ import react from '@astrojs/react';
 
 export default defineConfig({
     site: 'https://synosys.github.io',
-    base: './', // This matches where Hugo serves static files
-    trailingSlash: 'always',
+    base: '/teaching/complex-systems/', // This matches where Hugo serves static files
+    // trailingSlash: 'always',
     markdown: {
         remarkPlugins: [remarkMath],
         rehypePlugins: [
