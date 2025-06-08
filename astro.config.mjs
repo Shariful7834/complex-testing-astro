@@ -11,7 +11,7 @@ import react from '@astrojs/react';
 export default defineConfig({
     site: 'https://synosys.github.io',
     base: '/teaching/complex-systems/', // This matches where Hugo serves static files
-    // trailingSlash: 'always',
+    trailingSlash: 'always',
     // integrations: [],
 
     markdown: {
