@@ -51,7 +51,7 @@ export type SiteConfig = {
     projectsPerPage?: number;
 };
 
-// ✅ Move this OUTSIDE of the config object
+// ✅ Base path for deployment in subdirectory
 const base = '/teaching/complex-systems';
 
 const siteConfig: SiteConfig = {
@@ -76,7 +76,7 @@ const siteConfig: SiteConfig = {
     subtitle: 'A course by Dirk Brockmann',
     description: '',
     image: {
-        src: '/complexity.jpg',
+        src: heroImg, // ✅ using the verified image file
         alt: 'Complex Systems in Biology'
     },
     headerNavLinks: [

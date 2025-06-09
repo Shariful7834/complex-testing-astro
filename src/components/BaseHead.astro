@@ -5,36 +5,32 @@ import siteConfig from '../data/site-config';
 import '../styles/global.css';
 
 export type Props = {
-    title?: string;
-    description?: string;
-    image?: { src: string; alt?: string };
-    pageType?: 'website' | 'article';
+  title?: string;
+  description?: string;
+  image?: { src: string; alt?: string };
+  pageType?: 'website' | 'article';
 };
 
 const { description = '', image = siteConfig.image, pageType = 'website' } = Astro.props;
 const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' | ');
 const resolvedImage = image?.src
-    ? {
-          src: typeof image.src === 'string' 
-              ? new URL(image.src, Astro.site).toString()
-              : new URL(image.src.src, Astro.site).toString(),
-          alt: image.alt
-      }
-    : undefined;
+  ? {
+      src:
+        typeof image.src === 'string'
+          ? new URL(image.src, Astro.site).toString()
+          : new URL(image.src.src, Astro.site).toString(),
+      alt: image.alt,
+    }
+  : undefined;
 const canonicalURL = new URL(Astro.request.url, Astro.site);
 
 /**
  * Enforce some standard canonical URL formatting across the site.
  */
 function formatCanonicalURL(url: string | URL) {
-    const path = url.toString();
-    const hasQueryParams = path.includes('?');
-    // If there are query params, make sure the URL has no trailing slash
-    if (hasQueryParams) {
-        path.replace(/\/?$/, '');
-    }
-    // otherwise, canonical URL always has a trailing slash
-    return path.replace(/\/?$/, hasQueryParams ? '' : '/');
+  const path = url.toString();
+  const hasQueryParams = path.includes('?');
+  return path.replace(/\/?$/, hasQueryParams ? '' : '/');
 }
 ---
 
@@ -48,12 +44,12 @@ function formatCanonicalURL(url: string | URL) {
 <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin="anonymous" />
 <link rel="preload" as="font" type="font/woff2" href={newsreaderWoff2} crossorigin="anonymous" />
 
-<!-- Low Priority Global Metadata -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
+<!-- ✅ Fixed relative paths using Astro.base -->
+<link rel="icon" type="image/svg+xml" href={`${Astro.base}favicon.svg`} />
+<link rel="sitemap" href={`${Astro.base}sitemap-index.xml`} />
+<link rel="alternate" type="application/rss+xml" href={`${Astro.base}rss.xml`} title="RSS" />
 
-<!-- Page Metadata -->
+<!-- Canonical Metadata -->
 <link rel="canonical" href={formatCanonicalURL(canonicalURL)} />
 <meta name="description" content={description} />
 
@@ -65,7 +61,7 @@ function formatCanonicalURL(url: string | URL) {
 {resolvedImage?.src && <meta property="og:image" content={resolvedImage.src} />}
 {resolvedImage?.alt && <meta property="og:image:alt" content={resolvedImage.alt} />}
 
-<!-- X/Twitter -->
+<!-- Twitter Metadata -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={formatCanonicalURL(canonicalURL)} />
 <meta property="twitter:title" content={title} />
