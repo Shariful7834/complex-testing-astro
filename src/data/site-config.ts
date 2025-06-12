@@ -52,7 +52,7 @@ export type SiteConfig = {
 };
 
 // ✅ Base path for deployment in subdirectory
-const base = '/teaching/complex-systems';
+const base = '/complex-testing-astro';
 
 const siteConfig: SiteConfig = {
     logo: {

@@ -6,13 +6,7 @@ tags:
   - CSS
   - Web development
 isFeatured: true
-seo:
-  image:
-    src: '/post-8.jpg'
-    alt: Light lines on a dark background
 ---
-
-![Light lines on a dark background](/post-8.jpg)
 
 **Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
 

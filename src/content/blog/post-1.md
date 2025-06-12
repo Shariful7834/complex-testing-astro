@@ -4,13 +4,7 @@ excerpt: In recent years, the way we work has undergone a significant transforma
 publishDate: 'Aug 5 2023'
 tags:
   - Guide
-seo:
-  image:
-    src: '/post-1.jpg'
-    alt: A person standing at the window
 ---
-
-![A person standing at the window](/post-1.jpg)
 
 **Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
 

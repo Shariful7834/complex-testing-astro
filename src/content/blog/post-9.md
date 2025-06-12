@@ -5,13 +5,7 @@ publishDate: 'October 12 2023'
 tags:
   - Web
   - Web development
-seo:
-  image:
-    src: '/post-9.jpg'
-    alt: Mountains
 ---
-
-![Mountains](/post-9.jpg)
 
 **Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
 

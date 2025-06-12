@@ -1,4 +1,5 @@
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
@@ -6,13 +7,10 @@ import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 import generateDarkImages from './src/integrations/generate-dark-images';
 
-import react from '@astrojs/react';
-
 export default defineConfig({
-    site: 'https://synosys.github.io',
-    base: '/teaching/complex-systems/', // This matches where Hugo serves static files
+    site: 'https://shariful7834.github.io/complex-testing-astro/',
+    base: '/complex-testing-astro/',
     trailingSlash: 'always',
-    // integrations: [],
 
     markdown: {
         remarkPlugins: [remarkMath],
@@ -20,13 +18,15 @@ export default defineConfig({
             [
                 rehypeKatex,
                 {
-                    // Katex plugin options
+                    // KaTeX plugin options (optional)
                 }
             ]
         ]
     },
+
     vite: {
         plugins: [tailwindcss()]
     },
+
     integrations: [mdx(), sitemap(), generateDarkImages(), react()]
 });

@@ -5,13 +5,7 @@ publishDate: 'October 5 2023'
 tags:
   - Web
   - Web development
-seo:
-  image:
-    src: '/post-2.jpg'
-    alt: Half open laptop on a desk
 ---
-
-![Half open laptop on a desk](/post-2.jpg)
 
 **Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
 

@@ -38,9 +38,8 @@ const navLinks = siteConfig.footerNavLinks || [];
                     ))}
                 </div>
             )
-        }
-        <p class="text-sm">
-            &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.author.name}</a>. All rights
+        }        <p class="text-sm">
+            &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href={import.meta.env.BASE_URL}>{siteConfig.author.name}</a>. All rights
             reserved.
         </p>
     </div>

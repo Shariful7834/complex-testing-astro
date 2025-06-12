@@ -5,13 +5,7 @@ publishDate: 'Dec 15 2023'
 tags:
   - Web
   - Guide
-seo:
-  image:
-    src: '/post-11.jpg'
-    alt: Empty road into the Horizon
 ---
-
-![Empty road into the Horizon](/post-11.jpg)
 
 **Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
 
